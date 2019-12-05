@@ -4,28 +4,24 @@ class UiEngine {
     this._element = element;
   }
 
-  render(state) {
-    const html = this._render(state);
-    this._element.innerHTML = html;
-  }
-
   initialRender(state) {
-    return new View(state, this);
+    return new View(state, this._element, this._render);
   }
 }
 
 class View {
-  constructor(state, engine) {
+  constructor(state, element, render) {
     this._state = state;
-    this._engine = engine;
-    engine.render(state);
+    this._element = element;
+    this._render = render;
+    const html = render(state);
+    element.innerHTML = html;
   }
 
   update(updater) {
-    const { _engine, _state } = this;
-    const state = { ..._state };
+    const state = { ...this._state };
     updater(state);
-    return new View(state, _engine);
+    return new View(state, this._element, this._render);
   }
 }
 
