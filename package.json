@@ -1,9 +1,10 @@
 {
   "name": "poor-man-ui-framework",
-  "version": "1.0.0",
-  "description": "DIY ui framework",
-  "main": "dist/index.js",
+  "version": "1.0.1",
+  "description": "DIY UI framework",
+  "main": "dist/main.js",
   "scripts": {
+    "prepublishOnly": "npm run build",
     "build": "webpack --mode=production",
     "serve": "webpack-dev-server --open --mode=development"
   },
