@@ -10,6 +10,7 @@ World's tiniest UI framework
 * Only JS
 * Support old browser
 * Write template in pure JS
+* 2 APIs only to avoid cognitive overload
 
 # Install
 
