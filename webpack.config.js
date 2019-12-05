@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (_, argv) => ({
@@ -23,6 +24,9 @@ module.exports = (_, argv) => ({
     port: 8050
   },
   plugins: [
+    new webpack.SourceMapDevToolPlugin({
+      
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './public/index.html'
