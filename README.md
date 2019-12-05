@@ -2,7 +2,7 @@
 World's tiniest UI framework
 
 [![Npm version](https://img.shields.io/npm/v/poor-man-ui-framework.svg)](https://www.npmjs.com/package/poor-man-ui-framework)
-[![MIT License](https://img.shields.io/github/license/avid-Desmaisons/PoormanUiFramework.svg)](https://github.com/David-Desmaisons/PoormanUiFramework/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/github/license/David-Desmaisons/PoormanUiFramework.svg)](https://github.com/David-Desmaisons/PoormanUiFramework/blob/master/LICENSE)
 
 # Features
 
