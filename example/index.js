@@ -1,8 +1,9 @@
 import { UiEngine } from "../src/index";
-import { MyCountApplication } from "./app";
+import { MyCountApplication } from "../application/app";
 
 const render = state => `<h1>${state.name}</h1>
 <p>${state.count}</p>
+<button onClick="state.commands.add()">My button</button>
 <ul>${state.array.map(value => `<li>${value}</li>`).join("")}</ul>`;
 const element = document.getElementById("app");
 
