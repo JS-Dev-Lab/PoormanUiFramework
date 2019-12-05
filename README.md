@@ -6,11 +6,13 @@ World's tiniest UI framework
 
 # Features
 
-* 3Kb Only
-* Only JS
-* Support old browser
-* Write template in pure JS
-* 2 APIs only to avoid cognitive overload
+* 3Kb unzipped
+* Old browsers support
+* Pure JS template 
+* Only 2 APIs to avoid cognitive overload
+* Support batch upload
+* No virtual DOM
+* 31 LOCs
 
 # Install
 
@@ -46,3 +48,44 @@ view = view.update(current => {
   current.count++;
 });
 ```
+
+Implement a counter
+``` javascript
+import {UiEngine} from "poor-man-ui-framework";
+
+const render = state => `<p>${state.count}</p>
+<button onClick="state.commands.add()">My button</button>`;
+
+const element = document.getElementById("app");
+
+const engine = new UiEngine(element, render);
+let view = engine.initialRender({
+  count: 0,
+  commands:{
+    add() {
+      view = view.update(state => {
+        state.count++;
+      });
+    }
+  }
+});
+```
+
+Index.hml
+
+``` html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
+```
+
+
+
+
