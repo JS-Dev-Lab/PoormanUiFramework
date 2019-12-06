@@ -5,7 +5,7 @@ class MyCountApplication {
 
   run() {
     let view = this._uiEngine.initialRender({
-      name: "Poorman UI",
+      name: "universal application!!",
       count: 0,
       array: [],
       commands: {

@@ -19,13 +19,12 @@ module.exports = (_, argv) => ({
     ]
   },
   devServer: {
-    contentBase: path.join(process.cwd(), "dist"),
-    compress: true,
+    contentBase: path.join(__dirname, "dist"),
+    liveReload: true,
     port: 8050
   },
   plugins: [
-    new webpack.SourceMapDevToolPlugin({
-      
+    new webpack.SourceMapDevToolPlugin({   
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
