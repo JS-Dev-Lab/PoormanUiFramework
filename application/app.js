@@ -5,13 +5,18 @@ class MyCountApplication {
 
   run() {
     let view = this._uiEngine.initialRender({
-      name: "hello",
+      name: "Poorman UI",
       count: 0,
       array: [],
-      commands:{
+      commands: {
         add() {
           view = view.update(state => {
             state.count++;
+          });
+        },
+        setName(value) {
+          view = view.update(state => {
+            state.name = value;
           });
         }
       }
