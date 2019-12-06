@@ -5,17 +5,17 @@ class UiEngine {
   }
 
   initialRender(state) {
-    return new View(state, this._element, this._render);
+    return new View({ ...state}, this._element, this._render);
   }
 }
 
 class View {
   constructor(state, element, render) {
-    this._state = { ...state};
+    this._state = Object.freeze(state);
     this._element = element;
     this._render = render;
-    window.state = state;
-    const html = render(state);
+    window.state = this._state;
+    const html = render(this._state);
     element.innerHTML = html;
   }
 
