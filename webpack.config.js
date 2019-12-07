@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (_, argv) => ({
-  entry: (argv.mode === 'development')  ? './example/index.js' : './src/index.js',
+  entry: (argv.mode === 'development')  ? './simple-example/index.js' : './src/index.js',
   module: {
     rules: [
       {
