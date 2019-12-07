@@ -1,16 +1,33 @@
 <template>
   <div id="app">
-    Hello {{name}}
+    <h1>Hello {{state.name}}</h1>
+    <input
+      :value="state.name"
+      @input="setName"
+    />
+    <p>{{length}}</p>
+    <p>{{state.count}}</p><button @click="state.commands.add">My button</button>
   </div>
 </template>
 
 <script>
-
 export default {
+  props: {
+    state: {
+      type: Object,
+      required: true
+    }
+  },
+  inheritAttrs: false,
   name: "app",
-  data(){
-    return {
-      name: "vue"
+  methods: {
+    setName(event) {
+      this.state.commands.setName(event.target.value);
+    }
+  },
+  computed: {
+    length() {
+      return this.state.name.length;
     }
   }
 };
@@ -24,15 +41,5 @@ html {
 body {
   height: 100%;
   overflow: hidden;
-}
-
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 </style>

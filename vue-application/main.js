@@ -1,8 +1,7 @@
-import Vue from "vue";
-import App from "./App.vue";
+import { UiEngine } from "./VueUiEngine";
+import { MyCountApplication } from "../application/app";
 
-Vue.config.productionTip = false;
+const engine = new UiEngine("#app");
+const application = new MyCountApplication(engine);
 
-new Vue({
-  render: h => h(App),
-}).$mount("#app");
+application.run();
