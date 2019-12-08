@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (_, argv) => ({
-  entry: (argv.mode === 'development')  ? './simple-example/index.js' : './src/index.js',
+  entry: (argv.mode === 'development')  ? `./${argv.app}-example/index.js` : './src/index.js',
   module: {
     rules: [
       {
@@ -12,7 +12,7 @@ module.exports = (_, argv) => ({
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env', "@babel/preset-react"]
           }
         }
       }
@@ -21,7 +21,7 @@ module.exports = (_, argv) => ({
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     liveReload: true,
-    port: 8050
+    port: (argv.app ==="mp") ? 8050 : 8060
   },
   plugins: [
     new webpack.SourceMapDevToolPlugin({   
