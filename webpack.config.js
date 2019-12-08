@@ -21,14 +21,14 @@ module.exports = (_, argv) => ({
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     liveReload: true,
-    port: (argv.app ==="mp") ? 8050 : 8060
+    port: (argv.app ==="react") ? 3000 : 8050
   },
   plugins: [
     new webpack.SourceMapDevToolPlugin({   
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './public/index.html'
+      template:  `./public/${argv.app}/index.html`
     })
   ],
   output: {

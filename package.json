@@ -9,7 +9,7 @@
     "serve": "webpack-dev-server --open --mode=development --app=pm",
     "serve:react": "webpack-dev-server --open --mode=development --app=react",
     "serve:vue": "vue-cli-service serve ./vue-example/main.js --open",
-    "serve:all": "concurrently \"npm run serve\" \"npm run serve:vue\""
+    "serve:all": "concurrently \"npm run serve\" \"npm run serve:vue\" \"npm run serve:react\""
   },
   "repository": {
     "type": "git",
