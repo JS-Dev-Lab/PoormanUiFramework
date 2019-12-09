@@ -1,9 +1,14 @@
 const path = require('path');
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ports = {
+  react: 3000,
+  pm: 8050,
+  svelte: 5000
+};
 
 module.exports = (_, argv) => ({
-  entry: (argv.mode === 'development')  ? `./${argv.app}-example/index.js` : './src/index.js',
+  entry: (argv.mode === 'development') ? `./${argv.app}-example/index.js` : './src/index.js',
   module: {
     rules: [
       {
@@ -21,20 +26,20 @@ module.exports = (_, argv) => ({
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     liveReload: true,
-    port: (argv.app ==="react") ? 3000 : 8050
+    port: ports[argv.app]
   },
   plugins: [
-    new webpack.SourceMapDevToolPlugin({   
+    new webpack.SourceMapDevToolPlugin({
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template:  `./public/${argv.app}/index.html`
+      template: `./public/${argv.app}/index.html`
     })
   ],
   output: {
     libraryTarget: 'umd',
     library: 'poor-man-ui-framework',
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
+    path: path.resolve(__dirname, 'dist')
+  }
 });
