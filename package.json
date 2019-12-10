@@ -8,7 +8,7 @@
     "build": "webpack --mode=production",
     "serve": "webpack-dev-server --open --mode=development --app=pm",
     "serve:react": "webpack-dev-server --open --mode=development --app=react",
-    "serve:vue": "vue-cli-service serve ./vue-example/main.js --open",
+    "serve:vue": "webpack-dev-server --open --mode=development --app=vue",
     "serve:all": "concurrently \"npm run serve\" \"npm run serve:vue\" \"npm run serve:react\""
   },
   "repository": {
@@ -41,6 +41,7 @@
     "babel-loader": "^8.0.6",
     "concurrently": "^5.0.0",
     "cra-template": "^1.0.0",
+    "css-loader": "^3.3.0",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.0.1",
@@ -51,6 +52,8 @@
     "react-dom": "^16.12.0",
     "react-scripts": "^3.3.0",
     "vue": "^2.6.10",
+    "vue-loader": "^15.7.2",
+    "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",

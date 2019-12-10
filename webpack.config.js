@@ -1,14 +1,16 @@
 const path = require('path');
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const ports = {
   react: 3000,
   pm: 8050,
-  svelte: 5000
+  svelte: 5000,
+  vue: 9000
 };
 
 module.exports = (_, argv) => ({
-  entry: (argv.mode === 'development') ? `./${argv.app}-example/index.js` : './src/index.js',
+  entry: (argv.mode === 'development') ? `./${argv.app}-example/main.js` : './src/index.js',
   module: {
     rules: [
       {
@@ -20,6 +22,17 @@ module.exports = (_, argv) => ({
             presets: ['@babel/preset-env', "@babel/preset-react"]
           }
         }
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
       }
     ]
   },
@@ -34,7 +47,8 @@ module.exports = (_, argv) => ({
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: `./public/${argv.app}/index.html`
-    })
+    }),
+    new VueLoaderPlugin()
   ],
   output: {
     libraryTarget: 'umd',
