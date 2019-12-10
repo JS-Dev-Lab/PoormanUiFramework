@@ -6,6 +6,7 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "webpack --mode=production",
+    "serve:universal": "webpack-dev-server --open --mode=development --app=universal",
     "serve": "webpack-dev-server --open --mode=development --app=pm",
     "serve:react": "webpack-dev-server --open --mode=development --app=react",
     "serve:vue": "webpack-dev-server --open --mode=development --app=vue",
@@ -51,6 +52,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "^3.3.0",
+    "regenerator-runtime": "^0.13.3",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.2",
     "vue-style-loader": "^4.1.2",

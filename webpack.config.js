@@ -1,16 +1,19 @@
 const path = require('path');
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+require("regenerator-runtime");
+
 const ports = {
   react: 3000,
   pm: 8050,
   svelte: 5000,
-  vue: 9000
+  vue: 9000,
+  universal: 2500
 };
 
 module.exports = (_, argv) => ({
-  entry: (argv.mode === 'development') ? `./${argv.app}-example/main.js` : './src/index.js',
+  entry: ["regenerator-runtime", (argv.mode === 'development') ? `./${argv.app}-example/main.js` : './src/index.js'],
   module: {
     rules: [
       {
