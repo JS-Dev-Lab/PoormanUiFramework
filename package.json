@@ -6,11 +6,7 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "webpack --mode=production",
-    "serve:universal": "webpack-dev-server --open --mode=development --app=universal",
-    "serve": "webpack-dev-server --open --mode=development --app=pm",
-    "serve:react": "webpack-dev-server --open --mode=development --app=react",
-    "serve:vue": "webpack-dev-server --open --mode=development --app=vue",
-    "serve:all": "concurrently \"npm run serve\" \"npm run serve:vue\" \"npm run serve:react\""
+    "serve": "webpack-dev-server --open --mode=development --default=vue"
   },
   "repository": {
     "type": "git",

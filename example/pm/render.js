@@ -4,8 +4,6 @@ function render({ array, name, count }) {
  <p>${name.length}</p>
  <p>${count}</p><button onClick="state.commands.add()">My button</button>
  <ul>${array.map(value => `<li>${value}</li>`).join("")}</ul>`;
-};
-
-export {
-  render
 }
+
+export { render };

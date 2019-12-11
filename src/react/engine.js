@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 class UIEngine {
   constructor(App, root) {
@@ -22,12 +22,10 @@ class View {
   }
 
   update(updater) {
-    const newState = {...this._state}
+    const newState = { ...this._state };
     updater(newState);
     return new View(this._App, this._root, newState);
   }
 }
 
-export {
-  UIEngine
-};
+export { UIEngine };

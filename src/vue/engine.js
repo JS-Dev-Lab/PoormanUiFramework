@@ -11,12 +11,12 @@ class UiEngine {
   initialRender(state) {
     const { _App: App } = this;
     const vue = new Vue({
-      render: function (h) {
+      render: function(h) {
         return h(App, {
           props: {
             state: this.state
           }
-        })
+        });
       },
       data: {
         state
@@ -42,6 +42,4 @@ class View {
   }
 }
 
-export {
-  UiEngine
-};
+export { UiEngine };

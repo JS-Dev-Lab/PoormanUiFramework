@@ -24,6 +24,4 @@ class MyCountApplication {
   }
 }
 
-export {
-  MyCountApplication
-}
+export { MyCountApplication };

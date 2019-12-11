@@ -5,7 +5,7 @@ class UiEngine {
   }
 
   initialRender(state) {
-    return new View({ ...state}, this._element, this._render);
+    return new View({ ...state }, this._element, this._render);
   }
 }
 
@@ -26,6 +26,4 @@ class View {
   }
 }
 
-export {
-  UiEngine
-};
+export { UiEngine };
