@@ -45,6 +45,9 @@ module.exports = (_, argv) => ({
     port: ports[argv.app]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.Framework': JSON.stringify(argv.frame),
+    }),
     new webpack.SourceMapDevToolPlugin({
     }),
     new HtmlWebpackPlugin({

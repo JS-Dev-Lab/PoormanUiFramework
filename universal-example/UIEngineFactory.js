@@ -12,7 +12,7 @@ async function getEngine(type) {
             const { engine: pmEngine } = await import("./engines/PmEngine");
             return pmEngine;
     }
-    return null;
+    throw new Error(`invalid type: ${type}`);
 }
 
 export {
