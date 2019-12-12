@@ -1,11 +1,10 @@
 import { getEngine } from "./UIEngineFactory";
-import { MyCountApplication } from "./application/app";
+import { run } from "./application/app";
 
-async function run(type) {
+async function main(type) {
   const engine = await getEngine(type);
-  const application = new MyCountApplication(engine);
-  application.run();
+  run(engine);
 }
 
 window.console.log(process.env.Framework);
-run(process.env.Framework);
+main(process.env.Framework);
