@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { ...props.state };
+  }
+
   render() {
-    const { state } = this.props;
-    const { commands } = state;
-    const { add, setName } = commands;
+    const { state } = this;
+    const { commands: { add, setName } } = state;
     const onChange = event => {
       setName(event.target.value);
     };

@@ -8,23 +8,22 @@ class UIEngine {
   }
 
   initialRender(state) {
-    return new View(this._App, this._root, state);
+    const component =  ReactDOM.render(<this._App state={state} />, this._root);
+    return new View(component, state);
   }
 }
 
 class View {
-  constructor(App, root, state) {
-    this._App = App;
-    this._root = root;
+  constructor(component, state) {
     this._state = Object.freeze({ ...state });
-    ReactDOM.render(<App state={this._state} />, root);
-    window.view = this;
+    this._component = component;
   }
 
   update(updater) {
     const newState = { ...this._state };
     updater(newState);
-    return new View(this._App, this._root, newState);
+    this._component.setState(newState);
+    return new View(this._component, newState);
   }
 }
 
