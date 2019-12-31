@@ -11,18 +11,22 @@ class UiEngine {
 
 class View {
   constructor(state, element, render) {
-    this._state = Object.freeze(state);
     this._element = element;
     this._render = render;
-    window.state = this._state;
-    const html = render(this._state);
-    element.innerHTML = html;
+    this.render(state);
   }
 
   update(updater) {
     const newState = { ...this._state };
     updater(newState);
-    return new View(newState, this._element, this._render);
+    this.render(newState);
+  }
+
+  render(state) {
+    this._state = Object.freeze(state);
+    window.state = this._state;
+    const html = this._render(this._state);
+    this._element.innerHTML = html;
   }
 }
 

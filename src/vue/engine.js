@@ -38,7 +38,6 @@ class View {
 
   update(updater) {
     this._vueInstance.update(updater);
-    return this;
   }
 }
 

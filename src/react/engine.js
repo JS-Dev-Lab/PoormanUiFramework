@@ -22,8 +22,8 @@ class View {
   update(updater) {
     const newState = { ...this._state };
     updater(newState);
+    this._state = newState;
     this._component.setState(newState);
-    return new View(this._component, newState);
   }
 }
 
