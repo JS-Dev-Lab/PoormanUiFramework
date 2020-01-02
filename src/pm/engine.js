@@ -4,14 +4,16 @@ class UiEngine {
     this._element = element;
   }
 
-  initialRender(state) {
-    return new View({ ...state }, this._element, this._render);
+  initialRender({ state, commands }) {
+    return new View({ state: { ...state }, commands }, this._element, this._render);
   }
 }
 
 class View {
-  constructor(state, element, render) {
+  constructor({ state, commands }, element, render) {
     this._element = element;
+    this._commands = commands;
+    window.commands = commands;
     this._render = render;
     this.render(state);
   }
@@ -24,8 +26,7 @@ class View {
 
   render(state) {
     this._state = Object.freeze(state);
-    window.state = this._state;
-    const html = this._render(this._state);
+    const html = this._render({ state: this._state, commands: this._commands });
     this._element.innerHTML = html;
   }
 }

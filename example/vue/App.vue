@@ -6,7 +6,7 @@
       @input="setName"
     />
     <p>{{length}}</p>
-    <p>{{state.count}}</p><button @click="state.commands.add">My button</button>
+    <p>{{state.count}}</p><button @click="commands.add">My button</button>
   </div>
 </template>
 
@@ -16,13 +16,15 @@ export default {
     state: {
       type: Object,
       required: true
+    },
+    commands: {
+      type: Object
     }
   },
-  inheritAttrs: false,
   name: "app",
   methods: {
     setName(event) {
-      this.state.commands.setName(event.target.value);
+      this.commands.setName(event.target.value);
     }
   },
   computed: {

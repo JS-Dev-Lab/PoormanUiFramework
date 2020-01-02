@@ -8,13 +8,14 @@ class UiEngine {
     this._App = App;
   }
 
-  initialRender(state) {
+  initialRender({ state, commands }) {
     const { _App: App } = this;
     const vue = new Vue({
-      render: function(h) {
+      render: function (h) {
         return h(App, {
           props: {
-            state: this.state
+            state: this.state,
+            commands
           }
         });
       },

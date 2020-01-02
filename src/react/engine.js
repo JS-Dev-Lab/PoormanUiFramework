@@ -7,8 +7,8 @@ class UIEngine {
     this._root = root;
   }
 
-  initialRender(state) {
-    const component =  ReactDOM.render(<this._App state={state} />, this._root);
+  initialRender({ state, commands }) {
+    const component = ReactDOM.render(<this._App state={state} commands={commands} />, this._root);
     return new View(component, state);
   }
 }

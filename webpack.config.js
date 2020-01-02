@@ -31,6 +31,7 @@ module.exports = (_, argv) => ({
       }
     ]
   },
+  devtool: "eval",
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     liveReload: true,
@@ -40,7 +41,6 @@ module.exports = (_, argv) => ({
     new webpack.DefinePlugin({
       "process.env.Framework": JSON.stringify(argv.app || argv.default)
     }),
-    new webpack.SourceMapDevToolPlugin({}),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./public/index.html"
