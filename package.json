@@ -1,6 +1,6 @@
 {
   "name": "poor-man-ui-framework",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "DIY UI framework",
   "main": "dist/main.js",
   "scripts": {

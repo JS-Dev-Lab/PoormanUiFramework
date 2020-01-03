@@ -28,7 +28,7 @@ npm install poor-man-ui-framework
 
 Init and create view
 ``` javascript
-import {UiEngine} from "poor-man-ui-framework";
+import { viewCreatorFactory } from "poor-man-ui-framework";
 
 const render = state => `<h1>${state.name}</h1>
 <p>${state.count}</p>
@@ -36,11 +36,13 @@ const render = state => `<h1>${state.name}</h1>
 
 const element = document.getElementById("app");
 
-const engine = new UiEngine(element, render);
-let view = engine.createView({
-  name: "hello",
-  count: 0,
-  array: []
+const createView = viewCreatorFactory(element, render);
+let view = createView({
+  state: {
+    name: "hello",
+    count: 0,
+    array: []
+  }
 });
 ```
 
@@ -54,17 +56,19 @@ view = view.update(current => {
 
 Implement a counter
 ``` javascript
-import {UiEngine} from "poor-man-ui-framework";
+import { viewCreatorFactory } from "poor-man-ui-framework";
 
 const render = state => `<p>${state.count}</p>
 <button onClick="state.commands.add()">My button</button>`;
 
 const element = document.getElementById("app");
+const createView = viewCreatorFactory(element, render);
 
-const engine = new UiEngine(element, render);
-let view = engine.createView({
-  count: 0,
-  commands:{
+let view = createView({
+  state: {
+    count: 0,
+  },
+  commands: {
     add() {
       view = view.update(state => {
         state.count++;

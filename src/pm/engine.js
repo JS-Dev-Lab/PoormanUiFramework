@@ -1,4 +1,4 @@
-function viewCreatorBuilder(element, render) {
+function viewCreatorFactory(element, render) {
   return ({ state, commands }) => {
     return new View({ state: { ...state }, commands }, element, render);
   }
@@ -26,4 +26,4 @@ class View {
   }
 }
 
-export { viewCreatorBuilder };
+export { viewCreatorFactory };

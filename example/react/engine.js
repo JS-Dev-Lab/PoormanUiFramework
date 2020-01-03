@@ -1,7 +1,7 @@
-import { viewCreatorBuilder } from "../../src/react/engine";
+import { viewCreatorFactory } from "../../src/react/engine";
 import App from "./App";
 
 const root = document.getElementById("app");
-const createView = viewCreatorBuilder(App, root);
+const createView = viewCreatorFactory(App, root);
 
 export { createView };

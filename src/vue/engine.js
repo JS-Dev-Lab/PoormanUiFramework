@@ -2,7 +2,7 @@ import Vue from "vue";
 
 Vue.config.productionTip = false;
 
-function viewCreatorBuilder(selector, App) {
+function viewCreatorFactory(selector, App) {
   return ({ state, commands }) => {
     const vue = new Vue({
       render: function (h) {
@@ -36,4 +36,4 @@ class View {
   }
 }
 
-export { viewCreatorBuilder };
+export { viewCreatorFactory };

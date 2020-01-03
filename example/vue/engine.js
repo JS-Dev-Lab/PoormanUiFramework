@@ -1,5 +1,5 @@
-import { viewCreatorBuilder } from "../../src/vue/engine";
+import { viewCreatorFactory } from "../../src/vue/engine";
 import App from "./App.vue";
-const createView = viewCreatorBuilder("#app", App);
+const createView = viewCreatorFactory("#app", App);
 
 export { createView };

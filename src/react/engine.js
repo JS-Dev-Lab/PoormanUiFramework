@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-function viewCreatorBuilder(App, root) {
+function viewCreatorFactory(App, root) {
   return ({ state, commands }) => {
     const component = ReactDOM.render(<App state={state} commands={commands} />, root);
     return new View(component, state);
@@ -22,4 +22,4 @@ class View {
   }
 }
 
-export { viewCreatorBuilder };
+export { viewCreatorFactory };
