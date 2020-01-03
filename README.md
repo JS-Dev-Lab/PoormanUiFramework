@@ -15,7 +15,7 @@ World's tiniest UI framework
 * Only 2 APIs to avoid cognitive overload
 * Support batch upload
 * No virtual DOM
-* 31 LOCs
+* 29 LOCs
 
 # Install
 
