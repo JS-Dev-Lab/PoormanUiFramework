@@ -2,8 +2,8 @@ import { getEngine } from "./UIEngineFactory";
 import { run } from "./application/app";
 
 async function main(type) {
-  const engine = await getEngine(type);
-  run(engine);
+  const createView = await getEngine(type);
+  run(createView);
 }
 
 window.console.log(process.env.Framework);

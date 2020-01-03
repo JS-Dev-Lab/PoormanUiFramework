@@ -1,11 +1,6 @@
-class UiEngine {
-  constructor(element, render) {
-    this._render = render;
-    this._element = element;
-  }
-
-  initialRender({ state, commands }) {
-    return new View({ state: { ...state }, commands }, this._element, this._render);
+function viewCreatorBuilder(element, render) {
+  return ({ state, commands }) => {
+    return new View({ state: { ...state }, commands }, element, render);
   }
 }
 
@@ -31,4 +26,4 @@ class View {
   }
 }
 
-export { UiEngine };
+export { viewCreatorBuilder };

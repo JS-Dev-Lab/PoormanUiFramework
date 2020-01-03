@@ -1,6 +1,5 @@
-import { UiEngine } from "../../src/vue/engine";
+import { viewCreatorBuilder } from "../../src/vue/engine";
 import App from "./App.vue";
+const createView = viewCreatorBuilder("#app", App);
 
-const engine = new UiEngine("#app", App);
-
-export { engine };
+export { createView };

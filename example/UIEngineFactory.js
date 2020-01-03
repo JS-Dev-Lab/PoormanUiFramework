@@ -1,7 +1,7 @@
 async function getEngine(type) {
   try {
-    const { engine } = await import(`./${type}/engine`);
-    return engine;
+    const { createView } = await import(`./${type}/engine`);
+    return createView;
   } catch {
     throw new Error(`invalid type: ${type}`);
   }

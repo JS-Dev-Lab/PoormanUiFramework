@@ -2,14 +2,8 @@ import Vue from "vue";
 
 Vue.config.productionTip = false;
 
-class UiEngine {
-  constructor(selector, App) {
-    this._selector = selector;
-    this._App = App;
-  }
-
-  initialRender({ state, commands }) {
-    const { _App: App } = this;
+function viewCreatorBuilder(selector, App) {
+  return ({ state, commands }) => {
     const vue = new Vue({
       render: function (h) {
         return h(App, {
@@ -27,7 +21,7 @@ class UiEngine {
           updater(this.state);
         }
       }
-    }).$mount(this._selector);
+    }).$mount(selector);
     return new View(vue);
   }
 }
@@ -42,4 +36,4 @@ class View {
   }
 }
 
-export { UiEngine };
+export { viewCreatorBuilder };

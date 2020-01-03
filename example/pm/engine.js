@@ -1,7 +1,7 @@
-import { UiEngine } from "../../src/pm/engine";
+import { viewCreatorBuilder } from "../../src/pm/engine";
 import { render } from "./render";
 
 const element = document.getElementById("app");
-const engine = new UiEngine(element, render);
+const createView = viewCreatorBuilder(element, render);
 
-export { engine };
+export { createView };

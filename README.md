@@ -37,7 +37,7 @@ const render = state => `<h1>${state.name}</h1>
 const element = document.getElementById("app");
 
 const engine = new UiEngine(element, render);
-let view = engine.initialRender({
+let view = engine.createView({
   name: "hello",
   count: 0,
   array: []
@@ -62,7 +62,7 @@ const render = state => `<p>${state.count}</p>
 const element = document.getElementById("app");
 
 const engine = new UiEngine(element, render);
-let view = engine.initialRender({
+let view = engine.createView({
   count: 0,
   commands:{
     add() {
