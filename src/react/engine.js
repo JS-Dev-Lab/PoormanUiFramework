@@ -14,12 +14,13 @@ class View {
     this._component = component;
   }
 
-  update(updater, callback) {
+  update(updater) {
     const newState = { ...this._state };
     updater(newState);
     this.fullUpdate(newState);
-    callback && callback(newState);
   }
+
+  get state() { return this._state; }
 
   fullUpdate(newState) {
     this._state = newState;

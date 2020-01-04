@@ -13,12 +13,13 @@ class View {
     this.fullUpdate(state);
   }
 
-  update(updater, callback) {
+  update(updater) {
     const newState = { ...this._state };
     updater(newState);
     this.fullUpdate(newState);
-    callback && callback(newState);
   }
+
+  get state() { return this._state; }
 
   fullUpdate(state) {
     this._state = Object.freeze(state);

@@ -34,12 +34,13 @@ class View {
     this._vueInstance = vueInstance;
   }
 
-  update(updater, callBack) {
+  update(updater) {
     this._vueInstance.update(updater);
-    callBack && callBack(this._vueInstance.state);
   }
 
-  fullUpdate(newState){
+  get state() { return this._vueInstance.state; }
+
+  fullUpdate(newState) {
     this._vueInstance.fullUpdate(newState);
   }
 }

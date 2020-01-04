@@ -26,15 +26,9 @@ class DebugView {
   }
 
   update(updater) {
-    this._view.update(updater, (state) => this._remoteDev.update(state));
+    this._view.update(updater);
+    this._remoteDev.update(this._view.state)
   }
-}
-
-function debugViewCreatorFactory(viewCreatorFactory, ...parameters) {
-  return ({ state, commands }) => {
-    const view = viewCreatorFactory(...parameters)({ state, commands });
-    return new DebugView({ view, state });
-  };
 }
 
 function mapToDebug(createView) {
