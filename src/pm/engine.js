@@ -10,16 +10,17 @@ class View {
     this._commands = commands;
     window.commands = commands;
     this._render = render;
-    this.render(state);
+    this.fullUpdate(state);
   }
 
-  update(updater) {
+  update(updater, callback) {
     const newState = { ...this._state };
     updater(newState);
-    this.render(newState);
+    this.fullUpdate(newState);
+    callback && callback(newState);
   }
 
-  render(state) {
+  fullUpdate(state) {
     this._state = Object.freeze(state);
     const html = this._render({ state: this._state, commands: this._commands });
     this._element.innerHTML = html;

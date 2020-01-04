@@ -1,7 +1,10 @@
+import { mapToDebug } from "../src/DebugView.js"
+
 async function getEngine(type) {
   try {
     const { createView } = await import(`./${type}/engine`);
-    return createView;
+    const createDebugView = mapToDebug(createView);
+    return createDebugView;
   } catch {
     throw new Error(`invalid type: ${type}`);
   }

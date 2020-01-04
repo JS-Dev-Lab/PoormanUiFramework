@@ -14,9 +14,14 @@ class View {
     this._component = component;
   }
 
-  update(updater) {
+  update(updater, callback) {
     const newState = { ...this._state };
     updater(newState);
+    this.fullUpdate(newState);
+    callback && callback(newState);
+  }
+
+  fullUpdate(newState) {
     this._state = newState;
     this._component.setState(newState);
   }

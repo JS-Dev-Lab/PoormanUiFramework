@@ -19,6 +19,9 @@ function viewCreatorFactory(selector, App) {
       methods: {
         update(updater) {
           updater(this.state);
+        },
+        fullUpdate(newState) {
+          this.state = newState;
         }
       }
     }).$mount(selector);
@@ -31,8 +34,13 @@ class View {
     this._vueInstance = vueInstance;
   }
 
-  update(updater) {
+  update(updater, callBack) {
     this._vueInstance.update(updater);
+    callBack && callBack(this._vueInstance.state);
+  }
+
+  fullUpdate(newState){
+    this._vueInstance.fullUpdate(newState);
   }
 }
 
