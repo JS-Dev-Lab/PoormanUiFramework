@@ -9,7 +9,7 @@ function getUpdaterForDebug(view) {
 }
 
 class RemoteDevHandler {
-  constructor(state, viewName, view) {
+  constructor({state , view, viewName}) {
     const updateState = getUpdaterForDebug(view);
     this.remoteDev = connectViaExtension();
     this.remoteDev.init(state, { name: `${viewName}` });
