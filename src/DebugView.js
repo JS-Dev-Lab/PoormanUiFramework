@@ -18,12 +18,22 @@ class RemoteDevHandler {
   }
 }
 
+function getUpdaterForDebug(view) {
+  if (!view.fullUpdate) {
+    console.warn("Time travel not implemented");
+    return () => { };
+  }
+  return view.fullUpdate.bind(view);
+}
+
 class DebugView {
   constructor({ view, state, viewName = "application name" }) {
-    const updateForDebug = !!view.fullUpdate ? view.fullUpdate.bind(view) : console.warn("Time travel not implemented");
+    const updateForDebug = getUpdaterForDebug(view);
     this._remoteDev = new RemoteDevHandler(state, viewName, updateForDebug);
     this._view = view;
   }
+
+  get state() { return this._view.state; }
 
   update(updater) {
     this._view.update(updater);
@@ -38,4 +48,4 @@ function mapToDebug(createView) {
   };
 }
 
-export { DebugView , mapToDebug};
+export { DebugView, mapToDebug };
