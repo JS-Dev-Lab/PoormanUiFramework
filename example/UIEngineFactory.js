@@ -1,4 +1,4 @@
-import { mapToDebug } from "../src/DebugView.js"
+import { mapToDebug } from "../src/ObservableView.js"
 
 async function getEngine(type) {
   try {
