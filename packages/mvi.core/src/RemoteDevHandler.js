@@ -3,13 +3,13 @@ import { connectViaExtension, extractState } from "remotedev";
 function getUpdaterForDebug(view) {
   if (!view.fullUpdate) {
     console.warn("Time travel not implemented");
-    return () => { };
+    return () => {};
   }
   return view.fullUpdate.bind(view);
 }
 
 class RemoteDevHandler {
-  constructor({state , view, viewName}) {
+  constructor({ state, view, viewName }) {
     const updateState = getUpdaterForDebug(view);
     this.remoteDev = connectViaExtension();
     this.remoteDev.init(state, { name: `${viewName}` });
