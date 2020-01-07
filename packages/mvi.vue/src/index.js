@@ -5,7 +5,7 @@ Vue.config.productionTip = false;
 function viewCreatorFactory(selector, App) {
   return ({ state, commands }) => {
     const vue = new Vue({
-      render: function (h) {
+      render: function(h) {
         return h(App, {
           props: {
             state: this.state,
@@ -26,7 +26,7 @@ function viewCreatorFactory(selector, App) {
       }
     }).$mount(selector);
     return new View(vue);
-  }
+  };
 }
 
 class View {

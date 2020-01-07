@@ -1,4 +1,4 @@
-import { viewCreatorFactory } from "../../src/react/engine";
+import { viewCreatorFactory } from "mvi.react";
 import App from "./App";
 
 const root = document.getElementById("app");

@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "mvi.examples",
+  "name": "mvi.example",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -12,6 +12,8 @@
   "license": "MIT",
   "dependencies": {
     "mvi.core": "1.0.0",
+    "mvi.vue": "1.0.0",
+    "mvi.react": "1.0.0",
     "mvi.vanilla": "1.0.0"
   },
   "devDependencies": {

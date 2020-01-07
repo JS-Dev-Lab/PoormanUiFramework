@@ -1,4 +1,4 @@
-import { viewCreatorFactory } from "../../src/vue/engine";
+import { viewCreatorFactory } from "mvi.vue";
 import App from "./App.vue";
 const createView = viewCreatorFactory("#app", App);
 

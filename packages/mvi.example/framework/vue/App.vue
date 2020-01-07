@@ -1,12 +1,10 @@
 <template>
   <div id="app">
-    <h1>Hello {{state.name}}</h1>
-    <input
-      :value="state.name"
-      @input="setName"
-    />
-    <p>{{length}}</p>
-    <p>{{state.count}}</p><button @click="commands.add">My button</button>
+    <h1>Hello {{ state.name }}</h1>
+    <input :value="state.name" @input="setName" />
+    <p>{{ length }}</p>
+    <p>{{ state.count }}</p>
+    <button @click="commands.add">My button</button>
   </div>
 </template>
 

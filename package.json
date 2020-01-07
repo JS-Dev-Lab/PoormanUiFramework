@@ -1,13 +1,14 @@
 {
-  "name": "poor-man-ui-framework",
+  "name": "mvi",
+  "private": true,
   "version": "1.1.0",
   "description": "DIY UI framework",
   "main": "dist/main.js",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "webpack --mode=production",
-    "serve": "webpack-dev-server --open --mode=development --default=react",
-    "bootstrap": "lerna bootstrap"
+    "build": "lerna run build",
+    "bootstrap": "lerna bootstrap",
+    "serve": "lerna run serve"
   },
   "repository": {
     "type": "git",
