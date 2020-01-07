@@ -1,11 +1,9 @@
 const path = require("path");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
-require("regenerator-runtime");
-
-module.exports = (_, argv) => ({
+module.exports = () => ({
   entry: ["./src/index.js"],
+  externals: {
+    react: "react"
+  },
   module: {
     rules: [
       {

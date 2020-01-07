@@ -2,7 +2,7 @@ const path = require("path");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 require("regenerator-runtime");
 
-module.exports = (_, argv) => ({
+module.exports = () => ({
   entry: ["./src/index.js"],
   externals: {
     vue: "vue"
