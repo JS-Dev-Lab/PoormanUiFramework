@@ -23,11 +23,6 @@ module.exports = () => ({
   optimization: {
     minimize: true
   },
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    liveReload: true,
-    port: 9000
-  },
   output: {
     libraryTarget: "umd",
     library: "mvi.lit-html",

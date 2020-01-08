@@ -2,9 +2,6 @@ const path = require("path");
 
 module.exports = () => ({
   entry: ["./src/index.js"],
-  externals: {
-    "remotedev": "remotedev"
-  },
   module: {
     rules: [
       {
@@ -23,14 +20,9 @@ module.exports = () => ({
   optimization: {
     minimize: true
   },
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    liveReload: true,
-    port: 9000
-  },
   output: {
     libraryTarget: "umd",
-    library: "mvi.core",
+    library: "mvi.vanilla",
     filename: "index.js",
     path: path.resolve(__dirname, "dist")
   }

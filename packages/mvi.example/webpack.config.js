@@ -45,9 +45,8 @@ module.exports = (_, argv) => ({
     new VueLoaderPlugin()
   ],
   output: {
-    libraryTarget: "umd",
-    library: "mvi.examples",
-    filename: "main.js",
+    chunkFilename: '[name].bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, "dist")
   }
 });
