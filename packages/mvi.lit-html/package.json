@@ -1,5 +1,5 @@
 {
-  "name": "mvi.vanilla",
+  "name": "mvi.lit-html",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -17,5 +17,8 @@
     "babel-loader": "^8.0.6",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "lit-html": "^1.1.2"
   }
 }

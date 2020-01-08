@@ -11,10 +11,12 @@
   "author": "desmaisons_david@hotmail.com",
   "license": "MIT",
   "dependencies": {
+    "lit-html": "^1.1.2",
     "mvi.core": "1.0.0",
-    "mvi.vue": "1.0.0",
+    "mvi.lit-html": "1.0.0",
     "mvi.react": "1.0.0",
-    "mvi.vanilla": "1.0.0"
+    "mvi.vanilla": "1.0.0",
+    "mvi.vue": "1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
