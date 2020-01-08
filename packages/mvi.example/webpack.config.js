@@ -5,7 +5,10 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin");
 require("regenerator-runtime");
 
 module.exports = (_, argv) => ({
-  entry: ["regenerator-runtime", "./main.js"],
+  entry: {
+    app: ["regenerator-runtime", "./main.js"],
+    vendor: ['remotedev'],
+  },
   module: {
     rules: [
       {
