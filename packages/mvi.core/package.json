@@ -21,5 +21,13 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/David-Desmaisons/PoormanUiFramework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/David-Desmaisons/PoormanUiFramework/issues"
+  },
+  "homepage": "https://github.com/David-Desmaisons/PoormanUiFramework#readme"
 }
