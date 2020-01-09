@@ -30,7 +30,7 @@ Init and create view
 ``` javascript
 import { viewCreatorFactory } from "mvi.vanilla";
 
-const render = state => `<h1>${state.name}</h1>
+const render = ({state}) => `<h1>${state.name}</h1>
 <p>${state.count}</p>
 <ul>${state.array.map(value => `<li>${value}</li>`).join("")}</ul>`;
 
@@ -58,7 +58,7 @@ Implement a counter
 ``` javascript
 import { viewCreatorFactory } from "mvi.vanilla";
 
-const render = state => `<p>${state.count}</p>
+const render = ({state}) => `<p>${state.count}</p>
 <button onClick="commands.add()">My button</button>`;
 
 const element = document.getElementById("app");
