@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "mvi.example",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -12,11 +12,11 @@
   "license": "MIT",
   "dependencies": {
     "lit-html": "^1.1.2",
-    "mvi.core": "1.0.0",
-    "mvi.lit-html": "1.0.0",
-    "mvi.react": "1.0.0",
-    "mvi.vanilla": "1.0.0",
-    "mvi.vue": "1.0.0"
+    "mvi.core": "^1.2.0",
+    "mvi.lit-html": "^1.2.0",
+    "mvi.react": "^1.2.0",
+    "mvi.vanilla": "^1.2.0",
+    "mvi.vue": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
@@ -51,14 +51,14 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   },
-  "postcss": {	
-    "plugins": {	
-      "autoprefixer": {}	
-    }	
-  },	
-  "browserslist": [	
-    "> 1%",	
-    "last 2 versions",	
-    "not ie <= 8"	
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
   ]
 }
