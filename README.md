@@ -1,4 +1,4 @@
-# PoormanUiFramework
+# mvi.vanilla aka poorman framework
 World's tiniest UI framework
 
 [![Npm version](https://img.shields.io/npm/v/poor-man-ui-framework.svg)](https://www.npmjs.com/package/poor-man-ui-framework)
@@ -20,7 +20,7 @@ World's tiniest UI framework
 # Install
 
 ```
-npm install poor-man-ui-framework
+npm install mvi.vanilla
 ```
 
 
@@ -28,7 +28,7 @@ npm install poor-man-ui-framework
 
 Init and create view
 ``` javascript
-import { viewCreatorFactory } from "poor-man-ui-framework";
+import { viewCreatorFactory } from "mvi.vanilla";
 
 const render = state => `<h1>${state.name}</h1>
 <p>${state.count}</p>
@@ -56,10 +56,10 @@ view = view.update(current => {
 
 Implement a counter
 ``` javascript
-import { viewCreatorFactory } from "poor-man-ui-framework";
+import { viewCreatorFactory } from "mvi.vanilla";
 
 const render = state => `<p>${state.count}</p>
-<button onClick="state.commands.add()">My button</button>`;
+<button onClick="commands.add()">My button</button>`;
 
 const element = document.getElementById("app");
 const createView = viewCreatorFactory(element, render);

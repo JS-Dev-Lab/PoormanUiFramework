@@ -1,31 +1,23 @@
 {
-  "name": "mvi",
   "private": true,
-  "version": "1.1.0",
-  "description": "DIY UI framework",
-  "main": "dist/main.js",
+  "name": "mvi.example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
   "scripts": {
-    "prepublishOnly": "npm run build",
-    "build": "lerna run build",
-    "bootstrap": "lerna bootstrap --hoist",
-    "serve": "lerna run serve"
+    "build": "webpack --mode=production",
+    "serve": "webpack-dev-server --open --mode=development --default=vanilla"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/David-Desmaisons/wtuif.git"
-  },
-  "keywords": [
-    "ui",
-    "framework",
-    "javascript",
-    "DIY"
-  ],
-  "author": "David Desmaisons",
+  "author": "desmaisons_david@hotmail.com",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/David-Desmaisons/wtuif/issues"
+  "dependencies": {
+    "lit-html": "^1.1.2",
+    "mvi.core": "1.0.0",
+    "mvi.lit-html": "1.0.0",
+    "mvi.react": "1.0.0",
+    "mvi.vanilla": "1.0.0",
+    "mvi.vue": "1.0.0"
   },
-  "homepage": "https://github.com/David-Desmaisons/wtuif#readme",
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/polyfill": "^7.7.0",
@@ -38,7 +30,6 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
-    "concurrently": "^5.0.0",
     "cra-template": "^1.0.0",
     "css-loader": "^3.3.0",
     "eslint": "^6.7.2",
