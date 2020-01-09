@@ -2,3 +2,5 @@
 node_modules/
 
 packages/mvi.example/dist/
+
+lerna-debug.log
