@@ -10,7 +10,6 @@
     "bootstrap": "lerna bootstrap --hoist",
     "serve": "lerna run serve"
   },
-
   "keywords": [
     "ui",
     "framework",
@@ -60,5 +59,13 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "mvi.core": "file:packages/mvi.core",
+    "mvi.example": "file:packages/mvi.example",
+    "mvi.lit-html": "file:packages/mvi.lit-html",
+    "mvi.react": "file:packages/mvi.react",
+    "mvi.vanilla": "file:packages/mvi.vanilla",
+    "mvi.vue": "file:packages/mvi.vue"
   }
 }
