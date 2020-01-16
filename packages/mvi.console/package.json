@@ -14,7 +14,7 @@
     "url": "git+https://github.com/David-Desmaisons/PoormanUiFramework.git"
   },
   "scripts": {
-    "build": "build"
+    "build": ""
   },
   "bugs": {
     "url": "https://github.com/David-Desmaisons/PoormanUiFramework/issues"
@@ -22,5 +22,6 @@
   "dependencies": {
     "esm": "^3.2.25",
     "inquirer": "^7.0.3"
-  }
+  },
+  "gitHead": "b6c43f0088babf6e1daf9f2e0d4f31a71bbdcb7d"
 }
