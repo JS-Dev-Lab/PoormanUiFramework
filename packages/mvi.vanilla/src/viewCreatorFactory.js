@@ -1,4 +1,6 @@
-function viewCreatorFactory(element, render) {
+import { basicRender } from "./basicRender";
+
+function viewCreatorFactory(element, render = basicRender) {
   return ({ state, commands }) => {
     return new View({ state: { ...state }, commands }, element, render);
   };
