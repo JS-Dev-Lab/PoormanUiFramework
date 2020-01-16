@@ -1,4 +1,4 @@
-const { viewCreatorFactory } = require("./viewCreatorFactory");
-const { basicRender } = require("./basicRender");
+const { viewCreatorFactory } = require("./viewCreatorFactory.js");
+const { basicRender } = require("./basicRender.js");
 
 module.exports = { viewCreatorFactory, basicRender };

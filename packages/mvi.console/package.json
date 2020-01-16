@@ -5,9 +5,9 @@
   "author": "David-Desmaisons <desmaisons_david@hotmail.com>",
   "homepage": "https://github.com/David-Desmaisons/PoormanUiFramework/tree/master/packages/mvi.console#readme",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "directories": {
-    "lib": "dist"
+    "lib": "src"
   },
   "repository": {
     "type": "git",

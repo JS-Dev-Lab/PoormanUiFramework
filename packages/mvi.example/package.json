@@ -11,7 +11,9 @@
   "author": "desmaisons_david@hotmail.com",
   "license": "MIT",
   "dependencies": {
+    "esm": "^3.2.25",
     "lit-html": "^1.1.2",
+    "mvi.console": "file:../mvi.console",
     "mvi.core": "file:../mvi.core",
     "mvi.lit-html": "file:../mvi.lit-html",
     "mvi.react": "file:../mvi.react",
