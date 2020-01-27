@@ -10,6 +10,7 @@ class View {
   constructor({ state, commands }, element, render) {
     this._element = element;
     this._commands = commands;
+    this._agendedRedraw = false;
     window.commands = commands;
     this._render = render;
     this.fullUpdate(state);
@@ -27,8 +28,15 @@ class View {
 
   fullUpdate(state) {
     this._state = Object.freeze(state);
-    const html = this._render({ state: this._state, commands: this._commands });
-    this._element.innerHTML = html;
+    if (this._agendedRedraw) {
+      return;
+    }
+    this._agendedRedraw = true;
+    window.requestAnimationFrame(() => {
+      const html = this._render({ state: this._state, commands: this._commands });
+      this._element.innerHTML = html;
+      this._agendedRedraw = false;
+    });
   }
 }
 
