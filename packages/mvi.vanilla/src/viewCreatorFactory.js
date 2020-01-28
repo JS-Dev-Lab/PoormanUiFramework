@@ -12,13 +12,17 @@ class View {
     this._commands = commands;
     window.commands = commands;
     this._render = render;
+    this._newState = null
     this.fullUpdate(state);
   }
 
   update(updater) {
-    const newState = { ...this._state };
-    updater(newState);
-    this.fullUpdate(newState);
+    this._newState = this._newState || { ...this._state };
+    updater(this._newState);
+    Promise.resolve().then(() => {
+      this.fullUpdate(this._newState);
+      this._newState = null;
+    });
   }
 
   get state() {
