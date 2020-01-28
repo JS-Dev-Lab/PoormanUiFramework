@@ -1,4 +1,4 @@
-import { mapToDebug } from "mvi.core";
+//import { mapToDebug } from "mvi.core";
 
 async function getEngine(type) {
   try {
@@ -6,7 +6,8 @@ async function getEngine(type) {
       /* webpackChunkName: "[request]" */
       `./framework/${type}/engine`
     );
-    return mapToDebug(createView);
+    return createView;
+    //mapToDebug(createView);
   } catch {
     throw new Error(`invalid type: ${type}`);
   }

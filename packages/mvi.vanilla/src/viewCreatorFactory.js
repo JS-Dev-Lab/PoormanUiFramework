@@ -10,7 +10,7 @@ class View {
   constructor({ state, commands }, element, render) {
     this._element = element;
     this._commands = commands;
-    this._agendedRedraw = false;
+    this._redrawScheduled = false;
     window.commands = commands;
     this._render = render;
     this._newState = null
@@ -18,8 +18,12 @@ class View {
   }
 
   update(updater) {
+    const needStateScheduledUpdate = this._newState == null;
     this._newState = this._newState || { ...this._state };
     updater(this._newState);
+    if (!needStateScheduledUpdate){
+      return;
+    }
     Promise.resolve().then(() => {
       this.fullUpdate(this._newState);
       this._newState = null;
@@ -32,14 +36,14 @@ class View {
 
   fullUpdate(state) {
     this._state = Object.freeze(state);
-    if (this._agendedRedraw) {
+    if (this._redrawScheduled) {
       return;
     }
-    this._agendedRedraw = true;
+    this._redrawScheduled = true;
     window.requestAnimationFrame(() => {
       const html = this._render({ state: this._state, commands: this._commands });
       this._element.innerHTML = html;
-      this._agendedRedraw = false;
+      this._redrawScheduled = false;
     });
   }
 }

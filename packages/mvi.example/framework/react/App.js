@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     const { state, props } = this;
     const {
-      commands: { add, setName }
+      commands: { add, setName, addALot }
     } = props;
     const onChange = event => {
       setName(event.target.value);
@@ -20,7 +20,8 @@ class App extends Component {
         <input value={state.name} onChange={onChange}></input>
         <p>{state.name.length}</p>
         <p>{state.count}</p>
-        <button onClick={add}>My button</button>
+        <button onClick={add}>Add</button>
+        <button onClick={addALot}>Add a lot</button>
       </div>
     );
   }

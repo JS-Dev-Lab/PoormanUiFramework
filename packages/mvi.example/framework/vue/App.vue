@@ -4,7 +4,8 @@
     <input :value="state.name" @input="setName" />
     <p>{{ length }}</p>
     <p>{{ state.count }}</p>
-    <button @click="commands.add">My button</button>
+    <button @click="commands.add">Add</button>
+    <button @click="commands.addALot">Add a lot</button>
   </div>
 </template>
 
