@@ -2,11 +2,11 @@ import { basicRender } from "./basicRender";
 import { fullStateViewCreatorFactory } from "mvi.core";
 
 function viewCreatorFactory(element, render = basicRender) {
-  const renderer = ({state, commands}, element) => {
+  const renderer = ({state, commands}) => {
     window.commands = commands;
-    element.innerHTML = render({state, commands}, element);
+    element.innerHTML = render({state, commands});
   }
-  return fullStateViewCreatorFactory(element, renderer);
+  return fullStateViewCreatorFactory(renderer);
 }
 
 export { viewCreatorFactory };

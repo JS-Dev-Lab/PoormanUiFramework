@@ -1,12 +1,9 @@
-function fullStateViewCreatorFactory(element, renderer) {
-  return ({ state, commands }) => {
-    return new View({ state: { ...state }, commands }, element, renderer);
-  };
+function fullStateViewCreatorFactory(renderer) {
+  return ({ state, commands }) => new View({ state: { ...state }, commands }, renderer);
 }
 
 class View {
-  constructor({ state, commands }, element, renderer) {
-    this._element = element;
+  constructor({ state, commands }, renderer) {
     this._commands = commands;
     this._renderer = renderer;
     this._redrawScheduled = false;
@@ -18,7 +15,7 @@ class View {
     const needStateScheduledUpdate = this._newState == null;
     this._newState = this._newState || { ...this._state };
     updater(this._newState);
-    if (!needStateScheduledUpdate){
+    if (!needStateScheduledUpdate) {
       return;
     }
     Promise.resolve().then(() => {
@@ -38,7 +35,7 @@ class View {
     }
     this._redrawScheduled = true;
     window.requestAnimationFrame(() => {
-      this._renderer({ state: this._state, commands: this._commands }, this._element);
+      this._renderer({ state: this._state, commands: this._commands });
       this._redrawScheduled = false;
     });
   }
