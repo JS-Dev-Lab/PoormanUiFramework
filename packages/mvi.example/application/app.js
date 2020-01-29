@@ -16,7 +16,7 @@ function run(createView) {
         });
       },
       addALot() {
-        for (let i = 0; i < 1000000; i++) {
+        for (let i = 0; i < 10000000; i++) {
           view.update(update);
         }
       },
