@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --mode=production"
   },
+  "browserslist": "> 0.25%, not dead",
   "author": "desmaisons_david@hotmail.com",
   "license": "MIT",
   "dependencies": {
