@@ -1,7 +1,7 @@
 import { RemoteDevHandler } from "./RemoteDevHandler";
 
 class ObservableView {
-  constructor({ view, state }) {
+  constructor({ view }) {
     this._view = view;
     this.listeners = [];
   }
@@ -17,6 +17,10 @@ class ObservableView {
     };
   }
 
+  fullUpdate(updater) {
+    this._view.fullUpdate(updater);
+  }
+
   update(updater) {
     this._view.update(updater);
     const state = this._view.state;
@@ -26,14 +30,20 @@ class ObservableView {
   }
 }
 
-function mapToDebug(createView, viewName = "application name") {
+function mapToObservable(createView) {
   return ({ state, commands }) => {
     const view = createView({ state, commands });
-    const debugView = new ObservableView({ view, state });
-    const remoteDev = new RemoteDevHandler({ state, viewName, view });
-    debugView.onStateChanged(newState => remoteDev.update(newState));
-    return debugView;
+    return new ObservableView({ view, state });
   };
 }
 
-export { ObservableView, mapToDebug };
+function mapToDebug(createView, viewName = "application name") {
+  return ({ state, commands }) => {
+    const view = mapToObservable(createView)({ state, commands });
+    const remoteDev = new RemoteDevHandler({ state, viewName, view });
+    view.onStateChanged(newState => remoteDev.update(newState));
+    return view;
+  };
+}
+
+export { ObservableView, mapToDebug, mapToObservable };
