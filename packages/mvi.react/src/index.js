@@ -1,36 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { fullStateViewCreatorFactory } from "mvi.core";
 
-function viewCreatorFactory(App, root) {
+function viewCreatorFactory(App, element) {
   return ({ state, commands }) => {
     const component = ReactDOM.render(
       <App state={state} commands={commands} />,
-      root
+      element
     );
-    return new View(component, state);
+    const renderer = ({ state }) => component.setState(state);
+    return fullStateViewCreatorFactory(renderer)({ state, commands });
   };
-}
-
-class View {
-  constructor(component, state) {
-    this._state = Object.freeze({ ...state });
-    this._component = component;
-  }
-
-  update(updater) {
-    const newState = { ...this._state };
-    updater(newState);
-    this.fullUpdate(newState);
-  }
-
-  get state() {
-    return this._state;
-  }
-
-  fullUpdate(newState) {
-    this._state = newState;
-    this._component.setState(newState);
-  }
 }
 
 export { viewCreatorFactory };

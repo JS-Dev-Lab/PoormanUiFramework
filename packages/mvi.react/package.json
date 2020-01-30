@@ -7,5 +7,8 @@
     "build": "webpack --mode=production"
   },
   "author": "desmaisons_david@hotmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mvi.core": "file:../mvi.core"
+  }
 }
