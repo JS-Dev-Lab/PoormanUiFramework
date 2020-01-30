@@ -5,7 +5,7 @@ function viewCreatorFactory(element, render = basicRender) {
   const renderer = ({state, commands}) => {
     window.commands = commands;
     element.innerHTML = render({state, commands});
-  }
+  };
   return fullStateViewCreatorFactory(renderer);
 }
 
