@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { fullStateViewCreatorFactory } from "mvi.core";
+import { fullStateViewCreatorFactory } from "mvi.core/src/FullStateView";
 
 function viewCreatorFactory(App, element) {
   return ({ state, commands }) => {

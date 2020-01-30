@@ -6,12 +6,13 @@
   "scripts": {
     "build": "webpack --mode=production"
   },
-  "browserslist": "> 0.25%, not dead",
+  "sideEffects": false,
   "author": "desmaisons_david@hotmail.com",
   "license": "MIT",
   "dependencies": {
     "remotedev": "^0.2.9"
   },
+  "browserslist": "> 0.25%, not dead",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/David-Desmaisons/PoormanUiFramework.git"

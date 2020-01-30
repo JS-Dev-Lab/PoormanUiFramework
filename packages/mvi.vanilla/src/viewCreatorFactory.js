@@ -1,5 +1,5 @@
 import { basicRender } from "./basicRender";
-import { fullStateViewCreatorFactory } from "mvi.core";
+import { fullStateViewCreatorFactory } from "mvi.core/src/FullStateView";
 
 function viewCreatorFactory(element, render = basicRender) {
   const renderer = ({state, commands}) => {
