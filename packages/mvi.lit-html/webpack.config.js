@@ -2,9 +2,6 @@ const path = require("path");
 
 module.exports = () => ({
   entry: ["./src/index.js"],
-  externals: {
-    "lit-html": "lit-html"
-  },
   module: {
     rules: [
       {
