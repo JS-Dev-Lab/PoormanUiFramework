@@ -1,2 +1,4 @@
 import { ObservableView, mapToDebug } from "./src/ObservableView";
-export { ObservableView, mapToDebug };
+import { fullStateViewCreatorFactory } from "./src/FullStateView";
+
+export { ObservableView, mapToDebug, fullStateViewCreatorFactory };

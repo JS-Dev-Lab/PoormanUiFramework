@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/David-Desmaisons/PoormanUiFramework/issues"
   },
-  "homepage": "https://github.com/David-Desmaisons/PoormanUiFramework#readme"
+  "homepage": "https://github.com/David-Desmaisons/PoormanUiFramework#readme",
+  "dependencies": {
+    "mvi.core": "file:../mvi.core"
+  }
 }
