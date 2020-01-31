@@ -2,6 +2,8 @@ function fullStateViewCreatorFactory(renderer) {
   return ({ state, commands }) => new View({ state: { ...state }, commands }, renderer);
 }
 
+const dispatcher = (typeof window !== "undefined") ? window.requestAnimationFrame : setImmediate;
+
 class View {
   constructor({ state, commands }, renderer) {
     this._commands = commands;
@@ -34,7 +36,7 @@ class View {
       return;
     }
     this._redrawScheduled = true;
-    window.requestAnimationFrame(() => {
+    dispatcher(() => {
       this._renderer({ state: this._state, commands: this._commands });
       this._redrawScheduled = false;
     });
