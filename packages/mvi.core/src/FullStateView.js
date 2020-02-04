@@ -14,12 +14,12 @@ class View {
   }
 
   update(updater) {
-    const needStateScheduledUpdate = this._newState == null;
-    this._newState = this._newState || { ...this._state };
-    updater(this._newState);
-    if (!needStateScheduledUpdate) {
+    if (this._newState !== null) {
+      updater(this._newState);
       return;
     }
+    this._newState = { ...this._state };
+    updater(this._newState);
     Promise.resolve().then(() => {
       this.fullUpdate(this._newState);
       this._newState = null;
